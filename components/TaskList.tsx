@@ -68,7 +68,6 @@ function TaskList({ user }: User) {
   const removeTask = async (taskId: any) => {
     await deleteDoc(doc(db, "users", user?.email!, "tasks", taskId));
   };
-
   return (
     <div className="max-h-[50vh] overflow-y-auto w-full overflowList">
       {tasks?.empty && <p>nenhuma tarefa cadastrada</p>}
