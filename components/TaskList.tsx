@@ -101,10 +101,11 @@ function TaskList({ user }: User) {
               className="h-10 bg-[#3b3b3b] p-1 rounded-lg focus:outline-none flex-1"
               value={editTaskText}
               onChange={(e) => setEditTaskText(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && saveEditTask(task.id)}
               disabled={!user}
             />
           ) : (
-            <div className="h-10 flex items-center flex-1 p-1">
+            <div className="min-h-[40px] flex items-center flex-1 p-1">
               <p className="text-justify">{task.data().task}</p>
             </div>
           )}
